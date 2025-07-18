@@ -1,4 +1,4 @@
-Distributed Laundry Service Management System (DLSMS)
+##Distributed Laundry Service Management System (DLSMS)
 
 Introduction:
 
