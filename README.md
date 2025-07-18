@@ -82,12 +82,20 @@ Currently, the system interacts with a **custom REST API** to handle all transac
 
 **Request Body:**
 
+json
 {
-"name": "John Doe",
-"email": "john@example.com",
-"password": "password123"
+  "name": "John Doe",
+  "email": "john@example.com",
+  "password": "123456"
 }
 
+**Response (Success):**
+
+json
+{
+  "status": "success",
+  "message": "Registration successful"
+}
 
 ---
 
