@@ -1,64 +1,81 @@
-##Distributed Laundry Service Management System (DLSMS)##
+# Distributed Laundry Service Management System (DLSMS)
 
-Introduction:
+## **Introduction**
 
-The Distributed Laundry Service Management System (DLSMS) is a digital solution designed to streamline laundry operations for both customers and staff. The system eliminates manual order handling by providing:
-A Customer App for placing laundry orders, checking service prices, and tracking order status.
-A Staff App for managing and updating orders efficiently.
+The **Distributed Laundry Service Management System (DLSMS)** is a digital solution designed to streamline laundry operations for both customers and staff.  
+The system eliminates manual order handling by providing:
+
+- **Customer App**: Place laundry orders, check service prices, and track order status.  
+- **Staff App**: Manage and update orders efficiently.
+
 This system promotes faster service, reduces errors, and enhances customer satisfaction.
 
-Commercial Value / Third-Party Integration:
+---
 
-This project has the potential to be deployed by local laundromats to modernize their operations. In real-world applications, integrations with payment gateways, notification services, or delivery tracking APIs could further expand its capabilities.
-Currently, the system interacts with a custom REST API to handle all transactions between the frontend apps and the database. This approach ensures secure and controlled data management.
+## **Commercial Value / Third-Party Integration**
 
-System Architecture Type:
+This project has the potential to be deployed by local laundromats to modernize their operations.  
+In real-world applications, future integrations could include:
 
-Client-Server (3 Tier Architecture)
+- Payment Gateways (for online payments)
+- Notification Services (SMS/Email updates)
+- Delivery Tracking APIs (for laundry pickup and delivery)
 
-<img width="544" height="321" alt="architecture diagram" src="https://github.com/user-attachments/assets/17a8ca44-e3f8-4611-abe9-0f466742f0c4" />
+Currently, the system interacts with a **custom REST API** to handle all transactions between the frontend apps and the database. This ensures secure and controlled data management.
 
-Centralized Data Control: Both apps communicate through the same REST API for data consistency.
-Separation of Concerns: Frontend handles user interface; backend handles business logic and data.
-Scalability: Easily add new services, users, or additional apps without major system changes.
+---
 
-Backend Application:
+## **System Architecture**
 
-Technology Stack
-Component	Technology
-Language	PHP
-API	RESTful API (Custom PHP scripts)
-Database	MySQL (phpMyAdmin)
-Server	XAMPP (Apache)
+### **Architecture Type: Client-Server (3-Tier Architecture)**
 
-API Documentation:
+![Architecture Diagram](https://github.com/user-attachments/assets/17a8ca44-e3f8-4611-abe9-0f466742f0c4)
 
-Endpoint	Method	Description
-/register	POST	Customer Registration
-/login	POST	Login for Customer/Staff
-/orders	GET	Retrieve all orders (Staff)
-/orders	POST	Place new order (Customer)
-/order/status	PUT	Update order status (Staff)
-/services	GET	Retrieve service prices
+**Key Characteristics:**
 
-Request/Response Examples:
+- **Centralized Data Control**  
+  Both apps communicate through the same REST API for consistent and real-time data.
 
-Register (Customer)
-POST /register
-Request Body:
+- **Separation of Concerns**  
+  The frontend handles the user interface, while the backend manages logic and data.
 
-{
-  "name": "John Doe",
-  "email": "john@example.com",
-  "password": "123456"
-}
+- **Scalability**  
+  New services, users, or additional apps can be added without major system changes.
 
-Response (Success):
+---
 
-{
-  "status": "success",
-  "message": "Registration successful"
-}
+## **Backend Application**
+
+### **Technology Stack**
+
+| Component   | Technology           |
+|-------------|----------------------|
+| Language    | PHP                  |
+| API         | RESTful API (PHP)    |
+| Database    | MySQL (phpMyAdmin)   |
+| Server      | XAMPP (Apache)       |
+
+---
+
+### **API Documentation**
+
+| Endpoint        | Method | Description                   |
+|----------------|--------|-------------------------------|
+| /register       | POST   | Customer Registration          |
+| /login          | POST   | Login for Customer/Staff       |
+| /orders         | GET    | Retrieve all orders (Staff)    |
+| /orders         | POST   | Place new order (Customer)     |
+| /order/status   | PUT    | Update order status (Staff)    |
+| /services       | GET    | Retrieve service prices        |
+
+#### **Request/Response Example**
+
+##### **Register (Customer)**
+
+**POST** `/register`
+
+**Request Body:**
+
 
 Security:
 
