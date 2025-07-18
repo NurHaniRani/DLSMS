@@ -1,16 +1,19 @@
 Distributed Laundry Service Management System (DLSMS)
 
 Introduction:
+
 The Distributed Laundry Service Management System (DLSMS) is a digital solution designed to streamline laundry operations for both customers and staff. The system eliminates manual order handling by providing:
 A Customer App for placing laundry orders, checking service prices, and tracking order status.
 A Staff App for managing and updating orders efficiently.
 This system promotes faster service, reduces errors, and enhances customer satisfaction.
 
 Commercial Value / Third-Party Integration:
+
 This project has the potential to be deployed by local laundromats to modernize their operations. In real-world applications, integrations with payment gateways, notification services, or delivery tracking APIs could further expand its capabilities.
 Currently, the system interacts with a custom REST API to handle all transactions between the frontend apps and the database. This approach ensures secure and controlled data management.
 
 System Architecture Type:
+
 Client-Server (3 Tier Architecture)
 
 <img width="544" height="321" alt="architecture diagram" src="https://github.com/user-attachments/assets/17a8ca44-e3f8-4611-abe9-0f466742f0c4" />
@@ -20,6 +23,7 @@ Separation of Concerns: Frontend handles user interface; backend handles busines
 Scalability: Easily add new services, users, or additional apps without major system changes.
 
 Backend Application:
+
 Technology Stack
 Component	Technology
 Language	PHP
@@ -28,6 +32,7 @@ Database	MySQL (phpMyAdmin)
 Server	XAMPP (Apache)
 
 API Documentation:
+
 Endpoint	Method	Description
 /register	POST	Customer Registration
 /login	POST	Login for Customer/Staff
@@ -37,9 +42,11 @@ Endpoint	Method	Description
 /services	GET	Retrieve service prices
 
 Request/Response Examples:
+
 Register (Customer)
 POST /register
 Request Body:
+
 {
   "name": "John Doe",
   "email": "john@example.com",
@@ -47,12 +54,14 @@ Request Body:
 }
 
 Response (Success):
+
 {
   "status": "success",
   "message": "Registration successful"
 }
 
 Security:
+
 API communication is secured via server-side validation and parameter checks.
 Authentication is handled with simple session tokens (in future versions, can be replaced with JWT or OAuth 2.0 for scalability and security).
 
@@ -60,6 +69,7 @@ Frontend Application:
 
 Laundry Customer App
 Purpose:
+
 Allows customers to register, place laundry orders, view services and prices, and track order statuses.
 Technology Stack:
 Java (Swing GUI) via Eclipse IDE
@@ -68,6 +78,7 @@ The Customer App sends HTTP requests (GET/POST) to the REST API for all transact
 
 Laundry Staff App
 Purpose:
+
 Enables staff to view all orders and update their status.
 Technology Stack:
 Java (Swing GUI) via Eclipse IDE
@@ -80,6 +91,7 @@ Entity-Relationship Diagram (ERD)
 <img width="461" height="381" alt="erd" src="https://github.com/user-attachments/assets/f246cb57-1b49-41f5-a80d-bbffdceb0f1d" />
 
 Schema Justification:
+
 Customer Table: Stores customer information for login and orders.
 Orders Table: Records each laundry order with details like service type, clothing type, price, and status.
 Staff Table: Stores staff credentials for order management.
@@ -87,17 +99,22 @@ Staff Table: Stores staff credentials for order management.
 Business Logic and Data Validation:
 
 Customer App Flow:
+
 Register / Login -> View services and prices -> Place an order (select service, clothing type) -> Track order status
 
 Staff App Flow:
+
 Login -> View all incoming orders -> Update order statuses (e.g., "In Progress", "Completed")
 
 Data Validation:
+
 Frontend:
+
 Prevent empty form submissions
 Validate email format
 
 Backend:
+
 Check for existing emails during registration
 Sanitize inputs to prevent SQL Injection
 
