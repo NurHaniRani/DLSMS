@@ -12,7 +12,9 @@ Currently, the system interacts with a custom REST API to handle all transaction
 
 System Architecture Type:
 Client-Server (3 Tier Architecture)
+
 <img width="544" height="321" alt="architecture diagram" src="https://github.com/user-attachments/assets/17a8ca44-e3f8-4611-abe9-0f466742f0c4" />
+
 Centralized Data Control: Both apps communicate through the same REST API for data consistency.
 Separation of Concerns: Frontend handles user interface; backend handles business logic and data.
 Scalability: Easily add new services, users, or additional apps without major system changes.
@@ -74,6 +76,7 @@ The Staff App communicates with the REST API for order management and updates.
 
 Database Design
 Entity-Relationship Diagram (ERD)
+
 <img width="461" height="381" alt="erd" src="https://github.com/user-attachments/assets/f246cb57-1b49-41f5-a80d-bbffdceb0f1d" />
 
 Schema Justification:
